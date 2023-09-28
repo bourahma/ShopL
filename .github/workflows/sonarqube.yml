@@ -2,7 +2,7 @@ name: Sonar - Code quality
 on:
   push:
     branches:
-      - main, develop
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
