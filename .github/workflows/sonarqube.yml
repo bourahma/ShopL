@@ -1,4 +1,4 @@
-name: SonarCloud
+name: Sonar - Code quality
 on:
   push:
     branches:
