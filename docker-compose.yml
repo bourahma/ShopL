@@ -1,0 +1,7 @@
+version: '3'
+services:
+  # Spring Boot ShopLoc-BE Application
+  spring-app:
+    image: your-spring-app-image:tag
+    ports:
+      - "8080:8080" # Map Spring Boot app's port to host
