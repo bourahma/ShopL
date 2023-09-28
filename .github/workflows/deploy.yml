@@ -1,0 +1,29 @@
+name: CI/CD Lifecycle
+
+on:
+  push:
+    branches:
+      - '*'
+    except:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Build with Maven
+        run: mvn clean install -DskipTests=false
+
+      - name: Run Tests
+        run: mvn test
+
+      - name: Package Spring Boot Application
+        run: mvn package
