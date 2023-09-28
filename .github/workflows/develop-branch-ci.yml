@@ -1,4 +1,4 @@
-name: CI/CD Lifecycle
+name: Develop Branch CI
 
 on:
   push:
@@ -26,5 +26,5 @@ jobs:
       - name: Run Tests
         run: mvn test
 
-      - name: Package Spring Boot Application
+      - name: Packaging application
         run: mvn package
