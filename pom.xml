@@ -12,7 +12,7 @@
 	<artifactId>ShopLoc-BE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ShopLoc-BE</name>
-	<description>Back-end&apos;s ShopLoc implementation.</description>
+	<description>Back-end ShopLoc implementation.</description>
 	<properties>
 		<java.version>17</java.version>
 
