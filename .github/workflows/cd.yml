@@ -11,20 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
       - name: Deploy to AWS
         run: |
           # Add commands to deploy your application to AWS here
           # For example, you might use AWS CLI, AWS Elastic Beanstalk, or other deployment tools
           # Example: aws elasticbeanstalk create-application-version ...
-
       - name: Clean up
         run: |
           # Optionally, add cleanup or post-deployment steps here

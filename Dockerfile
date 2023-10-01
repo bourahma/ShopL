@@ -1,13 +1,11 @@
-FROM openjdk:17
-
-VOLUME /tmp
-
-ARG JAR_FILE=target/ShopLoc-BE-0.0.1-SNAPSHOT.jar
+FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-COPY ${JAR_FILE} /app/
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:resolve
 
-CMD ["java", "-jar", "ShopLoc-BE-0.0.1-SNAPSHOT.jar"]
+COPY src ./src
 
-EXPOSE 8000
+CMD ["./mvnw", "spring-boot:run"]
