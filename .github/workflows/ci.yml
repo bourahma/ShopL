@@ -20,11 +20,8 @@ jobs:
           distribution: 'adopt'
           java-version: '17'
 
-      - name: Build with Maven
-        run: mvn clean install -DskipTests=false
+      - name: Clean project
+        run: mvn clean
 
       - name: Run Tests
         run: mvn test
-
-      - name: Packaging application
-        run: mvn package

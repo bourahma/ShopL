@@ -1,19 +1,11 @@
-# Set Up JDK
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk-jammy
 
-#Volume
-VOLUME /tmp
-
-#Application JAR
-ARG JAR_FILE=target/ShopLoc-BE-0.0.1-SNAPSHOT.jar
-
-# Set the working directory
 WORKDIR /app
 
-# Copy the application JAR into the container
-COPY ${JAR_FILE} /app/
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:resolve
 
-EXPOSE 8000
+COPY src ./src
 
-# Specify the command to run your Spring Boot application
-CMD ["java", "-jar", "ShopLoc-BE-0.0.1-SNAPSHOT.jar"]
+CMD ["./mvnw", "spring-boot:run"]
