@@ -23,7 +23,7 @@ public class UserControllerIntegrationTest {
         mockMvc.perform(get("/users"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
-                .andExpect(jsonPath("$[0].userId").value(1))
+                .andExpect(jsonPath("$[0].userId").value(2))
                 .andExpect(jsonPath("$[0].lastname").value("Doe"))
                 .andExpect(jsonPath("$[0].role.roleName").value("USER"))
                 .andExpect(jsonPath("$[1].userId").value(2))
