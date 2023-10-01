@@ -5,28 +5,6 @@ on:
     branches:
       - main
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: '17'
-
-      - name: Build with Maven
-        run: mvn clean install -DskipTests=false
-
-      - name: Run Tests
-        run: mvn test
-
-      - name: Packaging application
-        run: mvn package
-
   deploy:
     runs-on: ubuntu-latest
 

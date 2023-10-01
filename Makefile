@@ -1,5 +1,5 @@
 runDB:
-	docker run --name shoploc-db-container -e POSTGRES_USER=shoplocU -e POSTGRES_PASSWORD=shoplocP -e POSTGRES_DB=shoploc-db -d -p 5432:5432 postgres
+	docker run --name shoploc-db-container -e POSTGRES_USER=shoplocU -e POSTGRES_PASSWORD=shoplocP -e POSTGRES_DB=shoploc-db -d -p 5432:5432 postgres:latest
 
 stopDB:
 	docker stop shoploc-db-container
@@ -13,9 +13,8 @@ runAPP:
 clean:
 	mvn clean
 
-run:
-	runDB
-	runAPP
+#run:
+	#docker-compose up
 
-stop:
-	stopDB
+#stop:
+	#docker-compose stop

@@ -1,7 +1,29 @@
-version: '3'
+version: '3.8'
+
 services:
-  # Spring Boot ShopLoc-BE Application
-  spring-app:
-    image: your-spring-app-image:tag
+  # ShopLoc Data Base
+  #shoploc-db:
+  #image: mysql:latest
+  #container_name: shoploc-db
+  #environment:
+  #- MYSQL_ROOT_PASSWORD=YES
+  #- MYSQL_DB=shoploc-db
+  #- MYSQL_USER=shoplocU
+  #- MYSQL_PASSWORD=YES
+
+  #ports:
+  #- "3306:3306"
+  #volumes:
+  #- ./mysql-data:/var/lib/mysql
+
+
+  # ShopLoc Back End API
+  shoploc-be:
+    build: .
+    image: shoploc-be
+    container_name: shoploc-be
     ports:
-      - "8080:8080" # Map Spring Boot app's port to host
+      - '8080:8080'
+    #depends_on:
+     # - shoploc-db
+
