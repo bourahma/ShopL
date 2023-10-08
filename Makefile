@@ -13,8 +13,8 @@ runAPP:
 clean:
 	mvn clean
 
-#run:
-	#docker-compose up
+run:
+	docker-compose up
 
-#stop:
-	#docker-compose stop
+stop:
+	docker-compose stop

@@ -14,6 +14,9 @@ public class User {
     @Column(name = "utilisateur_id")
     private Long userId;
 
+    @Column(name = "username", nullable = false)
+    private String username;
+
     @Column(name = "lastname", nullable = false)
     private String lastname;
 
@@ -22,6 +25,12 @@ public class User {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
 
     @Column(name = "phone_number")
     private String phoneNumber;

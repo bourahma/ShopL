@@ -1,0 +1,37 @@
+# Exclude common build directories and files
+target/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Exclude IDE-specific files and directories
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+out/
+
+# Exclude logs and temporary files
+logs/
+*.log
+*.log.*
+*.tmp
+*.swp
+hs_err_pid*
+
+# Exclude maven and Gradle specific files
+.m2/
+.gradle/
+
+# Exclude Spring Boot specific files
+spring-boot-starter-data-rest-*.jar
+spring-boot-devtools-*.jar
+
+# Exclude generated configuration files
+application-test.properties
+application.yml
